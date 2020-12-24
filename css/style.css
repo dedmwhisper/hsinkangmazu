@@ -1,41 +1,64 @@
 body, html {
   font-family: 'Noto Sans TC', sans-serif;
-  overflow-x: hidden;
-}
-body.modal-open {
-  overflow: hidden;
+  
 }
 *{
   transition: 0.25s;
 }
-body::-webkit-scrollbar {
-  display: none;
-}
 /* 主選單 */
 /* sidemenu */
+.home{
+  z-index: 2;
+  position: fixed;
+  cursor: pointer;
+  top: 15px;
+  left: 25px;
+  background-color: #f0f0f0;
+  padding: 13px 10px;
+  border-radius: 50%;
+}
+.home:hover{
+  transform: scale(1.1);
+  filter: drop-shadow(0px 0px 10px rgb(255,255,255));
+  
+}
 .menu{
-    z-index: 2;
-    position: fixed;
-    cursor: pointer;
-    top: 15px;
-    left: 25px;
+  z-index: 2;
+  position: fixed;
+  cursor: pointer;
+  top: 15px;
+  right: 25px;
+  background-color: #999999;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+.menu:hover{
+  background-color: rgb(68, 68, 68);
 }
 .navecontent{
-  visibility: hidden;
-  transition: 0.5s;
-  display: none;
+visibility: hidden;
+transition: 0.5s;
+display: none;
+}
+@media (max-width: 1199.98px) { 
+  .sidenav{
+    height: 100%;
+  }
 }
 .sidenav {
-  height: 100%;
+  height: 100vh;
   width: 0; 
   position: fixed; 
   z-index: 3; 
   top: 0;
   left: 0;
-  background-color: #111; 
-  overflow: hidden; 
+  background-color: #111111; 
+  overflow: auto; 
   padding-top: 5px; 
   transition: 0.5s; 
+}
+.sidenav > .row{
+  margin-right: 0 !important;
 }
 .sidenav a {
   padding: 8px 8px 8px 32px;
@@ -56,7 +79,7 @@ z-index: 999;
   font-size: 36px;
   margin-left: 50px;
 }
-.profile{
+a.profile{
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -83,31 +106,20 @@ z-index: 999;
   position: absolute;
   font-size: 3vmax;
   font-weight: 900;
-  /* color: #fff; */
+  color: #fff;
 }
 .protext:hover{
   display: none;
 }
 span.protext:hover ~ img.profilepic{
-  filter: brightness(1);
+filter: brightness(1);
 }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-  /* -------------------------------- 
-  
-  Modules - reusable parts of our design
 
-  -------------------------------- */
-.cd-img-replace {
-    /* replace text with a background-image */
-    display: inline-block;
-    overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
-  }
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 
 /*gototop*/
 #gtp{
@@ -165,10 +177,14 @@ span.protext:hover ~ img.profilepic{
   }
   /* section1 */
 .section{
-  position: relative;
+  /* position: relative; */
   padding: 0;
   margin: 0;
+  overflow: hidden;
 } 
+.section1 {
+  position:relative;
+}
 section > .container-fluid{
   padding: 0;
   margin: 0;
@@ -230,16 +246,16 @@ p.bubble {
           transform-origin: left bottom;
 }
 p.b1{
-  left: 5%;
-  top: 56%;
+  left: 0%;
+  top: 40%;
 }
 p.b2{
-  left: 50%;
-  top: 64%;
+  left: 80%;
+  top: 74%;
   border-radius: 0px 1vmax 5px 1vmax;
 }
 p.b3{
-  left: 45%;
+  left: 65%;
   top: 24%;
   border-radius: 0px 1vmax 5px 1vmax;
 }
@@ -375,11 +391,54 @@ img.gamestartbg{
 }
 .coin4{
   left: 55%;
-  top: 55.5%;
+  top: 54.5%;
 }
 .coin5{
   left: 30%;
   top: 69%;
+}
+/* gameans */
+.gameansbg{
+  position: relative;
+  text-align: center;
+}
+.gameans{
+  margin-top: 3%;
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  width: 70%;
+  height: 15vh;
+}
+.ans{
+  position: absolute;
+  transition: 0.25s;
+  transform: scale(0.8);
+  left: 0;
+  top: 0px;
+  filter: brightness(0);
+}
+.ans1{
+  left: 5%;
+  top: 10%;
+}
+.ans2{
+  left: 25%;
+  top: 10%;
+}
+.ans3{
+  left: 45%;
+  top: 20%;
+}
+.ans4{
+  left: 65%;
+  top: 20%;
+}
+.ans5{
+  left: 85%;
+  top: 10%;
 }
 /* section4 */
 .section4{
@@ -388,7 +447,34 @@ img.gamestartbg{
   background-attachment: fixed;
   text-align: center;
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
+}
+.title{
+  position: relative;
+}
+.titlebg{
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  left: 0;
+  /* margin-top: -10%; */
+}
+.titletext{
+  position: relative;
+  font-weight: 900;
+  font-size: 3.5vmax;
+  margin-top: 5%;
+  color: #fff;
+  /* padding-top: 20px; */
+  padding-bottom: 20px;
+  /* background-image: url(../images/title_bg.png);
+  background-size: cover;
+  background-position: 50%; */
+  width: 100%;
+  height: 100%;
+}
+.introsection{
+  margin-top: 10%;
 }
 .introcontent{
   padding: 10%;
@@ -415,5 +501,20 @@ img.intro{
 }
 .introcontent > p{
   text-align-last: left;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
+}
+/* section5 */
+.section5{
+  padding-top: 4%;
+  padding-bottom: 7%;
+  background: rgb(167,89,190);
+  background: radial-gradient(circle, rgba(167,89,190,1) 0%, rgba(126,65,167,1) 100%);
+}
+.calltoaction > .row{
+  text-align: center;
+}
+.cta{
+  text-align: center;
+  padding-top: 10px;
 }
