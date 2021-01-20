@@ -98,3 +98,22 @@ change.onmouseover = function(e) {
 change.onmouseout = function(e) {
   change.innerHTML = "金花虎爺在哪";
 }
+
+//ctamodal
+var ctamodal = document.getElementById("ctamodal");
+var btn = document.getElementById("ctabtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  ctamodal.style.display = "block";
+  body.style.overflow = "hidden";
+}
+span.onclick = function() {
+  ctamodal.style.display = "none";
+  body.style.overflow = "auto";
+}
+window.onclick = function(event) {
+  if (event.target == ctamodal) {
+    ctamodal.style.display = "none";
+    body.style.overflow = "auto";
+  }
+}
