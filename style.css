@@ -144,7 +144,7 @@ filter: brightness(1);
   }
 }
   
- /* loading */
+/* loading */
 .loading {
   position: fixed;
   top: 0;
@@ -166,6 +166,12 @@ filter: brightness(1);
 /*  height: 100px;*/
   animation: loading 1s ease infinite alternate;
 }
+.loading >p{
+  padding: 30px;
+  color:#fff;
+  font-size: 20px;
+}
+
   
   @keyframes loading {
     from {
